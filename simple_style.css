@@ -1,0 +1,200 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    position: relative;
+    height: 100vh;
+    width: 100%; /* Full width of the viewport */
+    margin: 0;
+    overflow: hidden;
+}
+
+@media (-webkit-transition) {
+    /* CSS to use if this media feature and prefixed transitions are supported */
+  }
+
+#left-content {
+    font-family: 'Open Sans', sans-serif;
+    flex: 1; /* Takes up 1/3 of the space */
+    background-color:  #FEFEFA;
+    display: flex;
+    height: 100%; 
+    position: relative;
+    flex-direction: column;
+    padding-left: 1vw; /* Padding relative to 1% of the width of the viewport */
+    padding-right: 1vw;
+    overflow-y: auto; 
+
+}
+#right-content {
+    flex: 2; /* Takes up 2/3 of the space */
+    display: flex;
+    justify-content: center; /* Center the SVG horizontally */
+    align-items: center; /* Center the SVG vertically */
+    background-color:  #FEFEFA;
+    height: 100%; 
+    padding: 1vw; /* Padding relative to 1% of the width of the viewport */
+    box-sizing: border-box;
+}
+.LogoBirdcast {
+
+position: absolute;
+top: 1vw;
+left: 1vw;
+z-index: 10;
+}
+.axis {
+    font: sans-serif;
+}
+
+.axis line {
+    fill: none;
+    stroke: #fff;
+    shape-rendering: crispEdges;
+}
+
+.axis path  {
+    fill: none;
+    stroke: #fff;
+    shape-rendering: crispEdges;
+}
+.tooltip {
+position: absolute;
+text-align: left;
+padding: 8px;
+font: 18px sans-serif;
+background: lightsteelblue;
+border: 0px;
+border-radius: 8px;
+pointer-events: none;
+opacity: 0;
+font-family: 'Open Sans', sans-serif;
+color: #333333;
+}
+.background-shaded-band {
+  /*  fill: #F5F5F5; /* Light shade of white */
+  fill: #F5F5F5; 
+}
+
+.summary-section {
+    display: flex;
+    padding: 1vw; /* Padding relative to 1% of the width of the viewport */
+    box-sizing: border-box;
+}
+
+#spring-summary {
+    display: block;
+    margin-top: 3vh; /* Starts at 25% of the viewport height */
+}
+
+#fall-summary {
+    display: block;
+    margin-top: 3vh; /* Starts at 75% of the viewport height */
+}
+
+.logo-container {
+    flex: 0 0 10vh; /* Allocate space for the logo */
+    text-align: center;
+}
+
+.map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+
+#map-content {
+    opacity: 0; /* Initially hidden */
+}
+
+#d3-content {
+    opacity: 1; /* Initially visible */
+}
+
+#map-content.show {
+    opacity: 1;
+    transition: all 5s;
+  }
+
+.year-label-right {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    color: #FEFEFA; /* White text */
+    border-radius: 5px; /* Optional: Rounded corners */
+    z-index: 2; /* Ensure this is above the map layers */
+}
+
+
+#spinner-container     {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to exactly center */
+    z-index: 5; /* Ensure it's above the map */
+    opacity: 0; /* Start with spinner hidden */
+    visibility: hidden; /* Start with spinner not visible */
+    transition: opacity 2s ease, visibility 2s ease; /
+}
+
+/* When spinner is active */
+#spinner-container.active {
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Make it visible */
+}
+
+
+.map-overlay {
+    position: absolute;
+    bottom: 30px; /* Adjust as necessary */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* Ensure it's above the map */
+    width: 25vw; 
+}
+
+
+.legend {
+    display: none;
+    background-color: rgba(32, 32, 32, 0.8); 
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.legend .bar {
+    height: 10px;
+    width: 100%;
+    background: linear-gradient(to right, #FF0000, #BF0000, #800000, #400000, #000000, #003300, #006600, #009900, #00CC00, #00FF00);
+}
+
+.legend .labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.legend .labels span {
+    font-size: 12px;
+    color: #FEFEFA;
+}
+
+.legend-2 {
+    background-color: rgba(32, 32, 32, 0.8); 
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.legend-2 .bar {
+    height: 10px;
+    width: 100%;
+    background: linear-gradient(to right, #202020, #0D0887, #5D01A6, #9C179E, #CC4678, #ED7953, #FDB32F, #F0F921, #FFFFFF);
+}
+
+.legend-2 .labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.legend-2 .labels span {
+    font-size: 12px;
+    color: #FEFEFA;
+}
